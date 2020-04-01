@@ -1,2 +1,3 @@
 docker build -t tf .
-docker run --runtime=nvidia -it -v /home/steven/桌面/machine_learning/ipynb:/tf -p 1234:8888 -p 6006:6006 tf
+docker run --gpus all  -it -v /home/$USER/桌面/tensorflow2.x/ipynb:/tf -p 1234:8888 -p 6006:6006 --name tc_container  tf
+docker exec -ti tc_container  bash
