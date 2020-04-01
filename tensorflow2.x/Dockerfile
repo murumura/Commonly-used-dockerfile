@@ -16,8 +16,10 @@ RUN pip3 --no-cache-dir install \
     notebook
     # Add Tini. Tini operates as a process subreaper for jupyter. This prevents
 # kernel crashes.
+EXPOSE  6666
 ENV TINI_VERSION v0.18.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /usr/bin/tini
 RUN chmod +x /usr/bin/tini
 ENTRYPOINT ["/usr/bin/tini", "--"]
 CMD ["bash", "-c", "source /etc/bash.bashrc && jupyter notebook --notebook-dir=/tf --ip 0.0.0.0  --allow-root"]
+
