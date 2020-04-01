@@ -1,0 +1,2 @@
+docker build -t tf .
+docker run --runtime=nvidia -it -v /home/steven/桌面/machine_learning/ipynb:/tf -p 1234:8888 -p 6006:6006 tf
