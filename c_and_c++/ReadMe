@@ -1,0 +1,3 @@
+docker build -t dev .
+docker run  --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -it -v /home/$USER/桌面/c_and_c++/oj:/user/oj --name dev_container  dev
+docker exec -ti  dev_container  bash
