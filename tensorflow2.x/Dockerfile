@@ -1,6 +1,7 @@
 FROM tensorflow/tensorflow:latest-gpu-py3
 RUN apt-get update && apt-get install -y --no-install-recommends git
-RUN apt install python3-pip -y
+RUN apt-get install python3-pip -y
+RUN pip install --upgrade pip
 RUN pip3 --no-cache-dir install \
     Pillow \
     h5py \
@@ -22,4 +23,3 @@ ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /usr/
 RUN chmod +x /usr/bin/tini
 ENTRYPOINT ["/usr/bin/tini", "--"]
 CMD ["bash", "-c", "source /etc/bash.bashrc && jupyter notebook --notebook-dir=/tf --ip 0.0.0.0  --allow-root"]
-
