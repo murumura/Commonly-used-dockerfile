@@ -1,3 +1,4 @@
 docker build -t tf .
 docker run --gpus all  -it -v /home/$USER/桌面/tensorflow2.x/ipynb:/tf -p 1234:8888 -p 6006:6006 --name tc_container  tf
 docker exec -ti tc_container  bash
+#to access jupyter notebook tying localhost:1234 in browser search bar

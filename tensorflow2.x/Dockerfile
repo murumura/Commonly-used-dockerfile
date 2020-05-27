@@ -1,6 +1,7 @@
 FROM tensorflow/tensorflow:latest-gpu-py3
 RUN apt-get update && apt-get install -y --no-install-recommends git
 RUN apt install python3-pip -y
+RUN pip install --upgrade pip
 RUN pip3 --no-cache-dir install \
     Pillow \
     h5py \
@@ -13,6 +14,7 @@ RUN pip3 --no-cache-dir install \
     pandas \
     future \
     portpicker\
+    librosa\
     notebook
     # Add Tini. Tini operates as a process subreaper for jupyter. This prevents
 # kernel crashes.
