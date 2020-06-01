@@ -17,6 +17,8 @@ RUN pip3 --no-cache-dir install \
     portpicker\
     librosa\
     numba==0.48.0\
+    tqdm\
+    scikit-image\
     notebook
     # Add Tini. Tini operates as a process subreaper for jupyter. This prevents
 # kernel crashes.
