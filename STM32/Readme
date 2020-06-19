@@ -1,0 +1,3 @@
+docker build -t stm32 .
+docker run  --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -it -p 1235:8888 --name stm_container  stm32
+docker exec -ti stm_container  bash
