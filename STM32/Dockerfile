@@ -19,6 +19,7 @@ RUN apt-get install -y autoconf automake libtool
 RUN apt-get install -y libsysfs-dev
 COPY ./stm32f103c8t6 /STM32
 RUN apt-get -y --reinstall install python-minimal
+RUN apt-get -y install hexedit
 WORKDIR /STM32
 RUN pwd && make
 

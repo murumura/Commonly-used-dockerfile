@@ -1,0 +1,9 @@
+#Build container
+docker build -t opengl_dev .
+#Run container
+docker run --gpus all -it \
+        -v /home/steven/桌面/Commonly-used-dockerfile/openGL/opengl_test:/home/opengl_test \
+        -v /tmp/.X11-unix:/tmp/.X11-unix \
+        -e DISPLAY -e XAUTHORITY -e NVIDIA_DRIVER_CAPABILITIES=all \
+        --name opengl_container \
+        opengl_dev bash
