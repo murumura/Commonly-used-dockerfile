@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:latest-gpu-py3
+FROM tensorflow/tensorflow:latest-gpu-jupyter
 RUN apt-get update && apt-get install -y --no-install-recommends git
 RUN apt-get install python3-pip -y
 RUN apt-get install libsndfile1 -y
